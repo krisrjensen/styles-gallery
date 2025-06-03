@@ -16,6 +16,10 @@ class StyleTemplateManager:
     
     def _load_builtin_templates(self):
         """Load all built-in templates"""
+        from .demo_templates import DEMO_TEMPLATES
+        
+        # Load demo templates first (highest priority)
+        self.templates.update(DEMO_TEMPLATES)
         self.templates.update(ACADEMIC_STYLES)
         self.templates.update(PRESENTATION_STYLES)
         self.templates.update(PUBLICATION_STYLES)
